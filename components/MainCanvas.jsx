@@ -1,5 +1,11 @@
+import Screen from "./Screen";
+
 const MainCanvas = () => {
-	return <div></div>;
+	return (
+		<div>
+			<Screen />
+		</div>
+	);
 };
 
 export default MainCanvas;
