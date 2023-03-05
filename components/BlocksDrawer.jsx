@@ -1,5 +1,5 @@
 const BlocksDrawer = () => {
-	return <div>a</div>;
+	return <div className="border">a</div>;
 };
 
 export default BlocksDrawer;
