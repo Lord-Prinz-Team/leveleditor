@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const DragableBrick = ({ X, Y, children, id, blocks, setSpawnedBlocks }) => {
+const DragableBrick = ({ X, Y, children, setBlocksbruh }) => {
 	const [isDragging, setIsDragging] = useState(false);
 	const [style, setStyle] = useState({});
 
@@ -12,16 +12,6 @@ const DragableBrick = ({ X, Y, children, id, blocks, setSpawnedBlocks }) => {
 			});
 		}
 	}, [X, Y]);
-
-	// useEffect(() => {
-	// 	window.addEventListener("contextmenu", (event) => {
-	// 		event.preventDefault();
-
-	// 		const blocksMap = blocks.filter((block) => block.id !== id);
-
-	// 		setSpawnedBlocks(() => blocksMap);
-	// 	});
-	// }, []);
 
 	const onMouseDownHandler = (event) => {
 		setIsDragging(true);

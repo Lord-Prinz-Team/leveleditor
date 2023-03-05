@@ -4,7 +4,6 @@ import { useState } from "react";
 
 const MainCanvas = () => {
 	const [spawnedBlocks, setSpawnedBlocks] = useState([]);
-
 	return (
 		<div className="flex shadow-2xl">
 			<Screen blocks={spawnedBlocks} setSpawnedBlocks={setSpawnedBlocks} />

@@ -11,7 +11,7 @@ const BrickSample = (props) => {
 				id: Math.random() * Math.random() * Math.random(),
 				element: (
 					<Image
-						alt={`${color} brick`}
+						alt={`${color}`}
 						src={`/bricks/brick--${color}.${extension}`}
 						width="64"
 						height="64"

@@ -2,10 +2,12 @@ import Image from "next/image";
 import background from "../public/background.png";
 import sidebricks from "../public/left_right-border.png";
 import topbrick from "../public/border-top.png";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import DragableBrick from "./DragableBrick";
 
-const Screen = ({ blocks, setSpawnedBlocks }) => {
+let socket;
+
+const Screen = ({ blocks }) => {
 	const [mouseX, setMouseX] = useState(0);
 	const [mouseY, setMouseY] = useState(0);
 	const mouseMoveHandler = (event) => {
@@ -13,24 +15,35 @@ const Screen = ({ blocks, setSpawnedBlocks }) => {
 		setMouseY(event.clientY - 148 - 12);
 	};
 
+	const ref = useRef();
+
+	useEffect(() => {
+		setInterval(() => {
+			const children = [...ref.current.children];
+			const bricks = children.map((child) => {
+				return {
+					top: child.style.top,
+					left: child.style.top,
+					color: child.children[0].alt,
+				};
+			});
+		}, 1000 * 10);
+	}, []);
+
 	return (
 		<div className="w-[1280px] h-[720px] relative overflow-hidden">
 			<div
 				className="w-[1216px] h-[693px] translate-x-8 translate-y-7 absolute"
 				onMouseMove={mouseMoveHandler}
+				ref={ref}
 			>
-				{blocks.map((block) => (
-					<DragableBrick
-						X={mouseX}
-						Y={mouseY}
-						key={block.id}
-						id={block.id}
-						blocks={blocks}
-						setSpawnedBlocks={setSpawnedBlocks}
-					>
-						{block.element}
-					</DragableBrick>
-				))}
+				{blocks.map((block) => {
+					return (
+						<DragableBrick X={mouseX} Y={mouseY} key={block.id}>
+							{block.element}
+						</DragableBrick>
+					);
+				})}
 			</div>
 			<Image
 				className="z-0"
