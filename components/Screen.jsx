@@ -6,13 +6,15 @@ import topbrick from "../public/border-top.png";
 const Screen = ({ blocks }) => {
 	return (
 		<div className="w-[1280px] h-[720px] relative overflow-hidden">
-			<div className="w-[1216px] h-[693px] translate-x-8 translate-y-7">
+			<div className="w-[1216px] h-[693px] translate-x-8 translate-y-7 absolute">
 				{blocks.map((block, index) => (
-					<div key={index}>{block}</div>
+					<div className="z-40 absolute" key={index}>
+						{block}
+					</div>
 				))}
 			</div>
 			<Image
-				className="-translate-y-[693px]"
+				className="z-0"
 				alt="background"
 				src={background}
 				draggable="false"
