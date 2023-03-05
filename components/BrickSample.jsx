@@ -3,3 +3,5 @@ const BrickSample = (props) => {
 
 	return <div>{name}</div>;
 };
+
+export default BrickSample;
