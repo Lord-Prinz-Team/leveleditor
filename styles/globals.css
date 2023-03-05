@@ -11,3 +11,28 @@
     height: 100vh;
     width: 100vw;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #272727;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #383838;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #3e3e3e;
+}
