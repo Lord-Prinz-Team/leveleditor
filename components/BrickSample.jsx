@@ -10,10 +10,11 @@ const BrickSample = (props) => {
 			<Image
 				alt={`${color} brick`}
 				src={`/bricks/brick--${color}.${extension}`}
-				width="80"
-				height="80"
+				width="64"
+				height="64"
+				draggable={false}
 			/>
-			<p className="w-12">{color.toUpperCase()} BRICK</p>
+			<p className="w-12 text-sm">{color.toUpperCase()} BRICK</p>
 		</div>
 	);
 };
