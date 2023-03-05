@@ -1,5 +1,5 @@
 # Level Editor
-https://github.com/Lord-Prinz-Team/leveleditor
+https://github.com/Lord-Prinz-Team/arkanoid
 
 Level Editor został zaimplementowany w NEXT.JS za pomocą web socketów. Ekran jest podzielony na planszę gry oraz zasobnik. Z zasobnika można wybierać bloki i przenosić je na planszę. Zmiany są zapisywane po 10 sekundach, wysyłane i zapisywane do pliku binarnego.
 
