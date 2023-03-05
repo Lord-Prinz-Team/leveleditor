@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { useState } from "react";
-
 const BrickSample = (props) => {
 	const { color, setSpawnedBlocks } = props;
 
@@ -9,13 +7,19 @@ const BrickSample = (props) => {
 	const onClickHandler = () => {
 		setSpawnedBlocks((res) => [
 			...res,
-			<Image
-				alt={`${color} brick`}
-				src={`/bricks/brick--${color}.${extension}`}
-				width="64"
-				height="64"
-				draggable={false}
-			/>,
+			{
+				x: 0,
+				y: 0,
+				element: (
+					<Image
+						alt={`${color} brick`}
+						src={`/bricks/brick--${color}.${extension}`}
+						width="64"
+						height="64"
+						draggable={false}
+					/>
+				),
+			},
 		]);
 	};
 
