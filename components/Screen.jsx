@@ -5,7 +5,7 @@ import topbrick from "../public/border-top.png";
 import { useState } from "react";
 import DragableBrick from "./DragableBrick";
 
-const Screen = ({ blocks }) => {
+const Screen = ({ blocks, setSpawnedBlocks }) => {
 	const [mouseX, setMouseX] = useState(0);
 	const [mouseY, setMouseY] = useState(0);
 	const mouseMoveHandler = (event) => {
@@ -19,8 +19,15 @@ const Screen = ({ blocks }) => {
 				className="w-[1216px] h-[693px] translate-x-8 translate-y-7 absolute"
 				onMouseMove={mouseMoveHandler}
 			>
-				{blocks.map((block, index) => (
-					<DragableBrick X={mouseX} Y={mouseY} key={index}>
+				{blocks.map((block) => (
+					<DragableBrick
+						X={mouseX}
+						Y={mouseY}
+						key={block.id}
+						id={block.id}
+						blocks={blocks}
+						setSpawnedBlocks={setSpawnedBlocks}
+					>
 						{block.element}
 					</DragableBrick>
 				))}

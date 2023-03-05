@@ -8,8 +8,7 @@ const BrickSample = (props) => {
 		setSpawnedBlocks((res) => [
 			...res,
 			{
-				x: 0,
-				y: 0,
+				id: Math.random() * Math.random() * Math.random(),
 				element: (
 					<Image
 						alt={`${color} brick`}
