@@ -17,18 +17,18 @@ const Screen = ({ blocks }) => {
 
 	const ref = useRef();
 
-	useEffect(() => {
-		setInterval(() => {
-			const children = [...ref.current.children];
-			const bricks = children.map((child) => {
-				return {
-					top: child.style.top,
-					left: child.style.top,
-					color: child.children[0].alt,
-				};
-			});
-		}, 1000 * 10);
-	}, []);
+	// useEffect(() => {
+	// setInterval(() => {
+	// 	const children = [...ref.current.children];
+	// 	const bricks = children.map((child) => {
+	// 		return {
+	// 			top: child.style.top,
+	// 			left: child.style.top,
+	// 			color: child.children[0].alt,
+	// 		};
+	// 	});
+	// }, 1000 * 10);
+	// }, []);
 
 	return (
 		<div className="w-[1280px] h-[720px] relative overflow-hidden">
