@@ -3,7 +3,7 @@ import Screen from "./Screen";
 
 const MainCanvas = () => {
 	return (
-		<div className="flex gap-3">
+		<div className="flex">
 			<Screen />
 			<BlocksDrawer />
 		</div>
